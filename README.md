@@ -17,8 +17,7 @@ There is no requirement to the type of demo you choose to make. An example could
 website where it is possible to enter a series of letters that when send to a web service will be manipulated
 and stored. Through the website it will also be possible to retrieve already saved data and display it.
 
-*NB* Please focus on the SOLID principle
-
+*NB* Please focus on the SOLID principles
 *NB* Please do small commits, and many commits with a simple, yet good message.
 
 
