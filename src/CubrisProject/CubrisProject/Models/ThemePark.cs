@@ -7,7 +7,7 @@ namespace CubrisProject.Models
 {
     public class ThemePark
     {
-        public string ThemeParkId { get; set; }
+        public int ThemeParkId { get; set; }
         public string ThemeParkName { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
