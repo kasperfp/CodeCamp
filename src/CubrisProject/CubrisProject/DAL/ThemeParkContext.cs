@@ -14,5 +14,10 @@ namespace CubrisProject.Models
         }
 
         public DbSet<ThemePark> ThemeParks { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=themepark.db");
+        }
     }
 }
