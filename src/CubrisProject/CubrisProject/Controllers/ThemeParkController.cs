@@ -9,7 +9,7 @@ using CubrisProject.Models;
 namespace CubrisProject.Controllers
 {
     [Produces("application/json")]
-    [Route("api/ThemePark")]
+    [Route("api/ThemeParks")]
     public class ThemeParkController : ControllerBase
     {
         private readonly ThemeParkContext _context;
@@ -27,6 +27,24 @@ namespace CubrisProject.Controllers
                 });
                 _context.SaveChanges();
             }
+        }
+
+        [HttpGet("{id}", Name = "GetThemePark")]
+        public ThemePark GetById(int id)
+        {
+            var item = _context.ThemeParks.Find(id);
+            if (item == null)
+            {
+                return null;
+            }
+            return item;
+        }
+
+
+        [HttpGet("[action]")]
+        public IEnumerable<ThemePark> GetAll()
+        {
+            return _context.ThemeParks.ToList();
         }
     }
 }
