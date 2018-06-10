@@ -1,7 +1,8 @@
-﻿import { Injectable, OnInit } from '@angular/core';
+﻿import { OnInit, Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-export class UserService {
+@Injectable()
+export class ThemeParkService {
     constructor(private http: Http) {}
 
     getAll() {
