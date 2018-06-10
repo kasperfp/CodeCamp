@@ -9,19 +9,19 @@ import { ThemeParkService } from '../../services/theme-park.service';
 export class HomeComponent implements OnInit{
 
     themeParks: any;
+    selectedThemeParkName: string = "";
+    selectedLatitude: string = "";
+    selectedLongitude: string = "";
 
-    constructor(private http: Http, private themeParService: ThemeParkService) { }
+    constructor(private http: Http, private themeParService: ThemeParkService) {}
 
     ngOnInit(): void {
-        this.themeParService.getAll().subscribe(res => {
-            console.log("res: " + res.json());
-            this.themeParks = res.json();
-        }, err => { console.log("err: " + err); });
+        this.themeParService.getAll().subscribe(res => this.themeParks = res.json());
     }
 
     showThemePark(themePark: any) {
-        console.log(themePark.themeParkId);
-        console.log(themePark.latitude);
-        console.log(themePark.longitude);
+        this.selectedThemeParkName = themePark.themeParkName;
+        this.selectedLatitude = themePark.latitude;
+        this.selectedLongitude = themePark.longitude;
     }
 }
